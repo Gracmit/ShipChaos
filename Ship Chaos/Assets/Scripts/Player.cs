@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
     public static event Action<BaseCounter> SelectedCounterChanged; 
 
     [SerializeField] private int _speed;
-    [SerializeField] private int rotationSpeed;
+    [FormerlySerializedAs("rotationSpeed")] [SerializeField] private int _rotationSpeed;
     [SerializeField] private LayerMask _countersLayerMask;
     
     private Vector3 _moveDirection;
@@ -27,12 +28,12 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        _moveDirection.x = Input.GetAxis("Horizontal");
-        _moveDirection.z = Input.GetAxis("Vertical");
+        _moveDirection.x = Input.GetAxisRaw("Horizontal");
+        _moveDirection.z = Input.GetAxisRaw("Vertical");
 
         _controller.SimpleMove(_moveDirection.normalized * (_speed * Time.deltaTime));
 
-        float rotateSpeed = rotationSpeed;
+        float rotateSpeed = _rotationSpeed;
         transform.forward = Vector3.Slerp(transform.forward, _moveDirection, Time.deltaTime * rotateSpeed);
     }
     
