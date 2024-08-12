@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class SelectedCounterVisuals : MonoBehaviour
+public class SelectedWorkStationVisuals : MonoBehaviour
 {
-    [SerializeField] private BaseCounter _baseCounter;
+    [FormerlySerializedAs("_baseCounter")] [SerializeField] private BaseWorkStation baseWorkStation;
     [SerializeField] private GameObject[] _visuals;
 
     private void Awake()
@@ -16,9 +17,9 @@ public class SelectedCounterVisuals : MonoBehaviour
         Player.SelectedCounterChanged += HandleSelectedCounterChanged;
     }
 
-    private void HandleSelectedCounterChanged(BaseCounter obj)
+    private void HandleSelectedCounterChanged(BaseWorkStation obj)
     {
-        if (obj == _baseCounter)
+        if (obj == baseWorkStation)
         {
             foreach (var visual in _visuals)
             {

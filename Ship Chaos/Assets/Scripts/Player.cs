@@ -1,19 +1,19 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ILabObjectParent
 {
-    public static event Action<BaseCounter> SelectedCounterChanged; 
+    public static event Action<BaseWorkStation> SelectedCounterChanged; 
 
     [SerializeField] private int _speed;
-    [FormerlySerializedAs("rotationSpeed")] [SerializeField] private int _rotationSpeed;
+    [SerializeField] private int _rotationSpeed;
     [SerializeField] private LayerMask _countersLayerMask;
+    [SerializeField] private Transform _handPosition;
     
     private Vector3 _moveDirection;
     private CharacterController _controller;
-    private Vector3 _lastInteractionDirection;
-    private BaseCounter _selectedCounter;
+    private BaseWorkStation _selectedWorkStation;
+    private LabObject _labObject;
 
     private void Awake()
     {
@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     {
         HandleMovement();
         HandleInteractions();
+        HandleInteractAction();
     }
 
     private void HandleMovement()
@@ -39,18 +40,14 @@ public class Player : MonoBehaviour
     
     private void HandleInteractions()
     {
-        
-        if (_moveDirection != Vector3.zero)
-            _lastInteractionDirection = _moveDirection;
-        
         float interactDistance = 2f;
-        if (Physics.Raycast(transform.position, _lastInteractionDirection, out RaycastHit raycastHit, interactDistance, _countersLayerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit raycastHit, interactDistance, _countersLayerMask))
         {
-            if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
+            if (raycastHit.transform.TryGetComponent(out BaseWorkStation baseWorkStation))
             {
-                if (baseCounter != _selectedCounter)
+                if (baseWorkStation != _selectedWorkStation)
                 {
-                    SetSelectedCounter(baseCounter);
+                    SetSelectedCounter(baseWorkStation);
                 }
             }                 
             else
@@ -64,11 +61,36 @@ public class Player : MonoBehaviour
         }
     }
     
-    
-    private void SetSelectedCounter(BaseCounter selectedCounter)
+    private void HandleInteractAction()
     {
-        _selectedCounter = selectedCounter;
-        
-        SelectedCounterChanged?.Invoke(selectedCounter);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (_selectedWorkStation == null) return;
+            
+            _selectedWorkStation.Interact(this);
+        }
     }
+    
+    private void SetSelectedCounter(BaseWorkStation selectedWorkStation)
+    {
+        _selectedWorkStation = selectedWorkStation;
+        
+        SelectedCounterChanged?.Invoke(selectedWorkStation);
+    }
+
+    public Transform GetLabObjectFollowTransform() => _handPosition;
+
+    public void SetLabObject(LabObject labObject)
+    {
+        _labObject = labObject;
+    }
+
+    public LabObject GetLabObject()
+    {
+        return _labObject;
+    }
+
+    public void ClearLabObject() => _labObject = null;
+
+    public bool HasLabObject() => _labObject != null;
 }
