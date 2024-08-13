@@ -6,6 +6,8 @@ public class LabObject : MonoBehaviour
     private ILabObjectParent _labObjectParent;
     private FollowTransform _followTransform;
 
+    public LabObjectSO GetLabObjectSo => _labObjectSo;
+
     private void Awake()
     {
         _followTransform = GetComponent<FollowTransform>();
@@ -17,6 +19,7 @@ public class LabObject : MonoBehaviour
         var labObject = instance.GetComponent<LabObject>();
         parent.SetLabObject(labObject);
         labObject.SetLabObjectParent(parent);
+        labObject._labObjectSo = labObjectSo;
     }
 
     public void SetLabObjectParent(ILabObjectParent parent)
@@ -33,4 +36,6 @@ public class LabObject : MonoBehaviour
         
         _labObjectParent.SetLabObject(this);
     }
+
+    public void DestroyLabObject() => Destroy(gameObject);
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2a1362478bed9448bdccdbc50c42bab, type: 3}
-  m_Name: Test
+  m_Name: Iron Ore
   m_EditorClassIdentifier: 
   prefab: {fileID: 9131424286354956005, guid: fb9ba5d14e6155b46bec2508eb4d6372, type: 3}
-  objectName: Test
+  objectName: Iron Ore

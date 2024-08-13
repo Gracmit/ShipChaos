@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1723859645200713505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277931029108580961, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597153269163942095, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_Name
+      value: IronFurnaceWorkStation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011011701140906895, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: baseWorkStation
+      value: 
+      objectReference: {fileID: 9123291938090753192}
+    - target: {fileID: 6584686224788570895, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9463be2eaaa0c1e44ae060879d1ec03b, type: 2}
+    m_RemovedComponents:
+    - {fileID: 6807152577101782356, guid: 5c8ca75976585ef459e8e2755889ecd3, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4597153269163942095, guid: 5c8ca75976585ef459e8e2755889ecd3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9123291938090753192}
+  m_SourcePrefab: {fileID: 100100000, guid: 5c8ca75976585ef459e8e2755889ecd3, type: 3}
+--- !u!1 &2891381039074846702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4597153269163942095, guid: 5c8ca75976585ef459e8e2755889ecd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1723859645200713505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9123291938090753192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891381039074846702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19b028c2f019d54393d89718bd36bee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _workStationTop: {fileID: 0}
+  _acceptedLabObjects:
+  - {fileID: 11400000, guid: a3beeb0d570bc734ea7f362e3ff034aa, type: 2}
+  _output: {fileID: 11400000, guid: 445f9d59f1ce44c43b03a098ccf99ecb, type: 2}
+  _burningTime: 5
