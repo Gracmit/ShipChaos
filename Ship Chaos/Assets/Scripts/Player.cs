@@ -25,6 +25,7 @@ public class Player : MonoBehaviour, ILabObjectParent
         HandleMovement();
         HandleInteractions();
         HandleInteractAction();
+        HandleAlternateInteraction();
     }
 
     private void HandleMovement()
@@ -60,7 +61,7 @@ public class Player : MonoBehaviour, ILabObjectParent
             SetSelectedCounter(null);
         }
     }
-    
+
     private void HandleInteractAction()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -68,6 +69,16 @@ public class Player : MonoBehaviour, ILabObjectParent
             if (_selectedWorkStation == null) return;
             
             _selectedWorkStation.Interact(this);
+        }
+    }
+    
+    private void HandleAlternateInteraction()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (_selectedWorkStation == null) return;
+            
+            _selectedWorkStation.InteractAlternate(this);
         }
     }
     
