@@ -9,6 +9,7 @@ public class IronFurnaceWorkStation : BaseWorkStation
 
     private FurnaceState _state;
     private float _burnTimer;
+    private List<LabObjectSO> _labObjectsInsideFurnace;
 
     private enum FurnaceState
     {
@@ -20,6 +21,7 @@ public class IronFurnaceWorkStation : BaseWorkStation
     private void Awake()
     {
         _state = FurnaceState.Waiting;
+        _labObjectsInsideFurnace = new List<LabObjectSO>();
     }
 
     private void Update()
@@ -39,12 +41,21 @@ public class IronFurnaceWorkStation : BaseWorkStation
             case FurnaceState.Waiting:
                 if (!player.HasLabObject()) return;
 
-                if (_acceptedLabObjects.Contains(player.GetLabObject().GetLabObjectSo))
+                var labObject = player.GetLabObject();
+                if (_acceptedLabObjects.Contains(labObject.GetLabObjectSo))
                 {
-                    player.GetLabObject().DestroyLabObject();
+                    if (_labObjectsInsideFurnace.Contains(labObject.GetLabObjectSo)) return;
+                    
+                    _labObjectsInsideFurnace.Add(labObject.GetLabObjectSo);
+                    labObject.DestroyLabObject();
                     player.ClearLabObject();
-                    _state = FurnaceState.Running;
-                    _burnTimer = 0;
+
+                    if (_labObjectsInsideFurnace.Count == 2)
+                    {
+                        _state = FurnaceState.Running;
+                        _burnTimer = 0;
+                        _labObjectsInsideFurnace.Clear();
+                    }
                 } 
                 break;
             
