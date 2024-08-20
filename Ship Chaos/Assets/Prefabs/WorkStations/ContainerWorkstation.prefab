@@ -282,5 +282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c21ec13583b744086eb8e1aa675616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _workStationTop: {fileID: 0}
+  _workStationTopPosition: {fileID: 5283729246545580560}
   _labObjectSo: {fileID: 11400000, guid: a3beeb0d570bc734ea7f362e3ff034aa, type: 2}
+--- !u!4 &5283729246545580560 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5257393126598987187, guid: 5c8ca75976585ef459e8e2755889ecd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 118660328986927011}
+  m_PrefabAsset: {fileID: 0}

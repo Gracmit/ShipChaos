@@ -30,7 +30,11 @@ public class IronFurnaceWorkStation : BaseWorkStation
         {
             _burnTimer += Time.deltaTime;
             Debug.Log($"{_burnTimer} / {_burningTime}");
-            if (_burnTimer >= _burningTime) _state = FurnaceState.Finished;
+            if (_burnTimer >= _burningTime)
+            {
+                _state = FurnaceState.Finished;
+                LabObject.SpawnLabObject(_output, this);
+            }
         }
     }
 
@@ -65,7 +69,7 @@ public class IronFurnaceWorkStation : BaseWorkStation
             case FurnaceState.Finished:
                 if(player.HasLabObject()) return;
                 
-                LabObject.SpawnLabObject(_output, player);
+                GetLabObject().SetLabObjectParent(player);
                 break;
         }
     }

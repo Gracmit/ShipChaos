@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17780430a1ffed343a0ef3378e92dd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _workStationTop: {fileID: 5257393126598987187}
+  _workStationTopPosition: {fileID: 5257393126598987187}
 --- !u!65 &4230935243014351735
 BoxCollider:
   m_ObjectHideFlags: 0

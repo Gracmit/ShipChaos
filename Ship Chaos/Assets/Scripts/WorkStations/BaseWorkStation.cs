@@ -1,9 +1,12 @@
+
 using UnityEngine;
 
 public class BaseWorkStation : MonoBehaviour, ILabObjectParent
 {
-    [SerializeField] private Transform _workStationTop;
+    [SerializeField] protected Transform _workStationTopPosition;
     private LabObject _labObject;
+    
+
     public virtual void Interact(Player player)
     {
     }
@@ -12,14 +15,19 @@ public class BaseWorkStation : MonoBehaviour, ILabObjectParent
     {
     }
     
-    public Transform GetLabObjectFollowTransform() => _workStationTop;
+    public Transform GetLabObjectFollowTransform() => _workStationTopPosition;
 
     public void SetLabObject(LabObject labObject) => _labObject = labObject;
 
-    public LabObject GetLabObject() => _labObject;
+    public virtual LabObject GetLabObject()
+    {
+        return _labObject;
+    }
 
     public void ClearLabObject() => _labObject = null;
 
-    public bool HasLabObject() => _labObject != null;
-
+    public bool HasLabObject()
+    {
+        return _labObject != null;
+    }
 }

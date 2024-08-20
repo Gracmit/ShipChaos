@@ -37,5 +37,13 @@ public class LabObject : MonoBehaviour
         _labObjectParent.SetLabObject(this);
     }
 
-    public void DestroyLabObject() => Destroy(gameObject);
+    public void DestroyLabObject()
+    {
+        Destroy(gameObject);
+    }
+
+    public void SetFollowTransform(Transform followTransform)
+    {
+        _followTransform.SetTargetTransform(followTransform);
+    }
 }

@@ -37,6 +37,7 @@ public class AnvilWorkstation : BaseWorkStation
         {
             GetLabObject().DestroyLabObject();
             LabObject.SpawnLabObject(_output, this);
+            _progress = 0;
         }
     }
 }

@@ -101,8 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19b028c2f019d54393d89718bd36bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _workStationTop: {fileID: 0}
+  _workStationTopPosition: {fileID: 6852897566700505746}
   _acceptedLabObjects:
   - {fileID: 11400000, guid: a3beeb0d570bc734ea7f362e3ff034aa, type: 2}
   _output: {fileID: 11400000, guid: 445f9d59f1ce44c43b03a098ccf99ecb, type: 2}
   _burningTime: 5
+--- !u!4 &6852897566700505746 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5257393126598987187, guid: 5c8ca75976585ef459e8e2755889ecd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1723859645200713505}
+  m_PrefabAsset: {fileID: 0}

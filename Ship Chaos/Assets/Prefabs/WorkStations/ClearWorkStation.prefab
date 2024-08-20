@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4183cde93be1d4788eda9af22d9795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _workStationTop: {fileID: 5299102339860878210}
+  _workStationTopPosition: {fileID: 5299102339860878210}
 --- !u!4 &5299102339860878210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5257393126598987187, guid: 5c8ca75976585ef459e8e2755889ecd3,

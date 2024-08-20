@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0692c39a516024b41808238d08aab405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _workStationTop: {fileID: 4461002415242684795}
+  _workStationTopPosition: {fileID: 4461002415242684795}
   _acceptedLabObjects:
   - {fileID: 11400000, guid: 445f9d59f1ce44c43b03a098ccf99ecb, type: 2}
   _output: {fileID: 11400000, guid: 8e97f79523e828b4dbb52fd3d3f6b3cc, type: 2}

@@ -90,6 +90,7 @@ public class Player : MonoBehaviour, ILabObjectParent
     }
 
     public Transform GetLabObjectFollowTransform() => _handPosition;
+    
 
     public void SetLabObject(LabObject labObject)
     {
