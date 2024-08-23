@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 505023047881567232}
   - component: {fileID: 3860988867679633343}
   - component: {fileID: 2684952919892970352}
-  - component: {fileID: 1603154630055328795}
   - component: {fileID: 6339590111357434842}
+  - component: {fileID: 2803147631415677951}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1603154630055328795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070707538682271609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4bddd43e1fe4afcae1e30c3f1a1edf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labObjectSo: {fileID: 11400000, guid: b8cd1dbf24525984e85c62216281d5fc, type: 2}
 --- !u!114 &6339590111357434842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce4769b2c5f40a29398ed725f7e0f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2803147631415677951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070707538682271609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d5d1a9c6234a26b64c6ff913f2eef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _labObjectSo: {fileID: 11400000, guid: fc1e427fc413fae478f297726e6e3ec9, type: 2}
